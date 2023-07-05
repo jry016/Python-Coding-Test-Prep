@@ -1,5 +1,6 @@
 # 2020 카카오 인턴십
 # [카카오 인턴] 키패드 누르기
+# https://school.programmers.co.kr/learn/courses/30/lessons/67256
 
 def distanceCalc(pos, num, hand):
     if(hand == "right"):
