@@ -32,45 +32,22 @@ def keypad(numbers, hand):
     Rcurrent_pos = 10
     
     for i in range(0, len(numbers)):
-        if (numbers[i] == 1 or numbers[i] == 4 or numbers[i] == 7):
+        if (numbers[i] in [1, 4, 7]):
             answer += 'L'
             Lcurrent_pos = numbers[i]
             
-        elif (numbers[i] == 3 or numbers[i] == 6 or numbers[i] == 9):
+        elif (numbers[i] in [3, 6, 9]):
             answer += 'R'
             Rcurrent_pos = numbers[i]
             
-        elif (numbers[i] == 2):
+        elif (numbers[i] in [2, 5, 8, 0]):
             if(distanceCalc(Lcurrent_pos, numbers[i], hand) >= distanceCalc(Rcurrent_pos, numbers[i], hand)):
                 answer += 'R'
                 Rcurrent_pos = numbers[i]
             else:
                 answer += 'L'
                 Lcurrent_pos = numbers[i]
-                
-        elif (numbers[i] == 5):
-            if(distanceCalc(Lcurrent_pos, numbers[i], hand) >= distanceCalc(Rcurrent_pos, numbers[i], hand)):
-                answer += 'R'
-                Rcurrent_pos = numbers[i]
-            else:
-                answer += 'L'
-                Lcurrent_pos = numbers[i]
-                
-        elif (numbers[i] == 8):
-            if(distanceCalc(Lcurrent_pos, numbers[i], hand) >= distanceCalc(Rcurrent_pos, numbers[i], hand)):
-                answer += 'R'
-                Rcurrent_pos = numbers[i]
-            else:
-                answer += 'L'
-                Lcurrent_pos = numbers[i]
-                
-        elif (numbers[i] == 0):
-            if(distanceCalc(Lcurrent_pos, numbers[i], hand) >= distanceCalc(Rcurrent_pos, numbers[i], hand)):
-                answer += 'R'
-                Rcurrent_pos = numbers[i]
-            else:
-                answer += 'L'
-                Lcurrent_pos = numbers[i]            
+                        
     return answer
 
 
