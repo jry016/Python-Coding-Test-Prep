@@ -1,5 +1,26 @@
 # 2019 KAKAO BLIND RECRUITMENT CODING TEST
 # 실패율
+# https://school.programmers.co.kr/learn/courses/30/lessons/42889?language=python3
+
+def solution(N, stages):
+    total = len(stages)
+    failures = {}
+    
+    for i in range(1, N + 1):
+        count = stages.count(i) 
+        if count == 0:
+            fail = 0
+        else:
+            fail = count / total
+        
+        total = total - count
+        failures[i] = fail # add stage# and # of failures to dictionary
+    
+    answer = sorted(failures, key = lambda x: failures[x], reverse = True)
+    return answer
+
+stages = [2, 1, 2, 6, 2, 4, 3, 3]
+print(solution(5, stages))
 
 # def countDistinctElements(n, arr):
 #     item_counter = {}
@@ -30,23 +51,3 @@
 
 # print(countDistinctElements(5, stages))
 # print(solution(5, stages))
-
-def solution(N, stages):
-    total = len(stages)
-    failures = {}
-    
-    for i in range(1, N + 1):
-        count = stages.count(i) 
-        if count == 0:
-            fail = 0
-        else:
-            fail = count / total
-        
-        total = total - count
-        failures[i] = fail # add stage# and # of failures to dictionary
-    
-    answer = sorted(failures, key = lambda x: failures[x], reverse = True)
-    return answer
-
-stages = [2, 1, 2, 6, 2, 4, 3, 3]
-print(solution(5, stages))
