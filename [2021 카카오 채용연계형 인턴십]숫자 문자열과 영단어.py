@@ -17,6 +17,7 @@ def solution(s):
     }
     for word in key:
         s = s.replace(word, str(key[word]))
+        
     return int(s)
 
 # Test Cases
