@@ -19,6 +19,8 @@
 #                     }
 #                 }
 
+import sys
+sys.stdin.reconfigure(encoding='utf-8')
 
 def Mia(input):
     double_score = {
@@ -37,18 +39,24 @@ def Mia(input):
         return double_score[input]
 
     else:
-        return int(sorted(input, reverse = True))
+        return int("".join(sorted(input, reverse = True)))
 
-s0, s1, r0, r1 = input().split()
-while(True):
-    #s0, s1, r0, r1 = input().split() # string
-                                     # map(int, input().split())
-    if(s0 == '0'):
+inputs = []
+
+while True:
+    line = input()
+    
+    # Terminating Condition
+    if(line  == '0 0 0 0'):
         break
     
-    p1_score = Mia(s0 + s1)
-    p2_score = Mia(r0 + r1)
-    
+    inputs.append(line)
+        
+    for line in inputs:
+        s0, s1, r0, r1 = line.split()
+        p1_score = Mia(s0 + s1)
+        p2_score = Mia(r0 + r1)
+        
     if(p1_score > p2_score):
         print("Player 1 wins.")
     elif(p1_score < p2_score):
@@ -56,3 +64,4 @@ while(True):
     else:
         print("Tie.")
         
+
