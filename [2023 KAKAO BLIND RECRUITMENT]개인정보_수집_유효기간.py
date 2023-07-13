@@ -4,8 +4,7 @@
 
 def dateSplit(date):
     results = list(map(int, date.split('.')))
-    n = results[2] + results[1] * 28 + results[0] * 28 * 12
-    return n
+    return results[2] + results[1] * 28 + results[0] * 28 * 12
 
 def solution(today, terms, privacies):
     tday = dateSplit(today)
@@ -13,21 +12,13 @@ def solution(today, terms, privacies):
     # New Dict to Store "a 12" to {'a': 12 * 28}
     termsDict = {a : int(b) * 28 for pair in terms for a,b in [pair.split()]}
 
-    # New Dict to Store Privacy Dates and Terms
-    privDict = {a : b for pair in privacies for a,b in [pair.split()]}
-    privDict = {dateSplit(key): value for key, value in privDict.items()}
-
-    exp_days = []
-    for pk, pv in privDict.items():
-        for tk, tv in termsDict.items():
-            if pv == tk:
-                exp_days.append(pk + termsDict[tk])
-
     result = []
-    for i in range(len(exp_days)):
-        if exp_days[i] <= tday:
+    for i in range(len(privacies)):
+        day, code = privacies[i].split()
+        day = dateSplit(day)
+        if  day + termsDict[code] <= tday:
             result.append(i+1)
-    
+            
     return result
 
 ### Test Cases ###
@@ -35,40 +26,32 @@ def solution(today, terms, privacies):
 terms = ['A 6', 'B 12', 'C 3']
 privacies = ["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]
 today = "2022.05.19"
-#print(solution(today, terms, privacies))
-
-# Debugging
-tday = dateSplit(today)
-
-# New Dict to Store "a 12" to {'a': 12 * 28}
-termsDict = {a : int(b) * 28 for pair in terms for a,b in [pair.split()]}
-
-# New Dict to Store Privacy Dates and Terms
-privDict = {a : b for pair in privacies for a,b in [pair.split()]}
-privDict = {dateSplit(key): value for key, value in privDict.items()}
-
-exp_days = []
-for pk, pv in privDict.items():
-    for tk, tv in termsDict.items():
-        if pv == tk:
-            exp_days.append(pk + termsDict[tk])
-
-result = []
-for i in range(len(exp_days)):
-    if exp_days[i] <= tday:
-        result.append(i+1)
-
-print("Today Days: ", tday)
-print(f"TermsDict: {termsDict}")
-print(f"privDict: {privDict}")
-print("EXP Days: ", exp_days)
-print(result)
-
+print(solution(today, terms, privacies))
 
 terms1 = ["Z 3", "D 5"]
 privacies1 = ["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D", "2019.07.01 D", "2018.12.28 Z"]
 today1 = "2020.01.01"
-#print(solution(today1, terms1, privacies1))
+print(solution(today1, terms1, privacies1))
+
+
+# Debugging
+# tday = dateSplit(today)
+
+# # New Dict to Store "a 12" to {'a': 12 * 28}
+# termsDict = {a : int(b) * 28 for pair in terms for a,b in [pair.split()]}
+
+# # New Dict to Store Privacy Dates and Terms
+# # privDict = {a : b for pair in privacies for a,b in [pair.split()]}
+# # privDict = {dateSplit(key): value for key, value in privDict.items()}
+
+# # exp_days = []
+# # for pk, pv in privDict.items():
+# #     exp_days.append(pk + termsDict[pv])
+
+# # result = []
+# # for i in range(len(exp_days)):
+# #     if exp_days[i] <= tday:
+# #         result.append(i+1)
 
 
 # -----------------------------------------------------------------------------------------
