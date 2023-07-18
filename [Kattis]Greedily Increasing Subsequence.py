@@ -15,6 +15,7 @@ def gis(N, A):
             gis.append(element)
     
     print(len(gis))
+    # unpack gis elements with spaces
     print(*gis)
         
 gis(N, A)
