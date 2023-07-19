@@ -19,3 +19,22 @@ def gis(N, A):
     print(*gis)
         
 gis(N, A)
+
+# Test Cases
+# 7
+# 2 3 1 5 4 7 6
+# Expected Output: 
+# 4
+# 2 3 5 7
+#
+# 5
+# 1 2 3 4 5
+# Expected Output: 
+# 5
+# 1 2 3 4 5
+#
+# 5
+# 5 4 3 2 1
+# Expected Output: 
+# 1
+# 5
