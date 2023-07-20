@@ -90,24 +90,6 @@ print(solution(f3, r3))
 # [[sum(...)] + rest for ...]: This construct creates a new list that contains the calculated total time (in minutes) as the first element, followed by the rest of the elements 
 # (i.e., the '5961' and 'IN' values) from the original sublist. For example, [[334, '5961', 'IN']].
 
-# def duration_calc(records, target):
-#     entry, exit, duration = None, None, None
-#     for record in records: 
-#         if record[1] == target:
-#             if record[2] == 'IN':
-#                 entry = record[0]
-#             elif record[2] == 'OUT':
-#                 exit = record[1]
-
-#         if entry is not None:
-#             duration = exit - entry
-#             break
-        
-#     if exit is None and entry is not None:
-#         duration = 1439 - entry
-        
-#     return duration
-
 
 
 
