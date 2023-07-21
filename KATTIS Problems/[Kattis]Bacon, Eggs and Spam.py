@@ -26,4 +26,24 @@ while True:
     
     for food, person in sorted_menu.items():
         print(f"{food} {' '.join(person)}")
-        
+    
+
+# Test Cases
+# 3
+# Alice bacon eggs spam
+# Sue pancakes sausage ham
+# David eggs spam
+# 1
+# Bill diet-coke
+# 0
+
+# Output:
+# bacon Alice
+# eggs Alice David
+# ham Sue
+# pancakes Sue
+# sausage Sue
+# spam Alice David
+
+# diet-coke Bill
+
