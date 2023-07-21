@@ -1,8 +1,9 @@
 # KATTIS
 # Pivot
 # https://open.kattis.com/problems/pivot
+# Reference http://mycode.doesnot.run/2018/04/11/pivot/
 
-
+# Version 4 from Reference
 def main():
     n = int(input())
     A = [int(num) for num in input().split()]
