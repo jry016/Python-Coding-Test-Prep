@@ -26,6 +26,7 @@ def solution(board, moves):
                         answer += 2
                         result = result[:-2]
                 break
+    return answer
     # Solution without Transposing the Board
     # for i in moves:
     #     for j in range(len(board)):
@@ -39,7 +40,7 @@ def solution(board, moves):
     #                     result = result[:-2]
     #             break
         
-    return answer
+    # return answer
 
 # Test Case
 board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
