@@ -20,13 +20,15 @@ def solution(priorities, location):
             else:
                 location -= 1 # deque gets rotated around by 1
 
-        else:
-            if location == 0:
-                return count + 1
+        else:   # when priorities[0] == max
+            if location == 0: 
+                count += 1 
+                break 
+            
             else:
-                priorities.popleft()
-                count += 1
-                location -= 1
+                priorities.popleft() # remove element 
+                count += 1 
+                location -= 1 
 
     return count
 
