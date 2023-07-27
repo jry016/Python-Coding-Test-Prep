@@ -24,10 +24,13 @@ def solution(operations):
         return [0, 0]
     else:
         return [nlargest(1,heap)[0], heap[0]]  
-        
+
+# heapq.nlargest(n, iterable, key=None)
 # nlargest(n, heap) 함수는 n개의 가장 큰 값들로 이루어진 리스트를 반환한다
 
-# Test Case
+# heapq.nsmallest(n, iterable, key=None)
+
+# Test Cases
 operations = ["I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"]
 print(solution(operations)) #[0, 0]
 
