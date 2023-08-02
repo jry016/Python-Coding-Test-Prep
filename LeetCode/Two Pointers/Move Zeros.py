@@ -1,3 +1,7 @@
+# LeetCode
+# Move Zeros
+# https://leetcode.com/problems/move-zeroes/?envType=study-plan-v2&envId=leetcode-75
+
 from typing import List
 from collections import deque
 
@@ -18,6 +22,7 @@ class Solution:
                 nums.append(curr)
 
         nums.extend(zeros)
+
 # Test Cases
 sol = Solution()
 nums = [0,1,0,3,12]
