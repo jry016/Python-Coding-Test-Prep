@@ -11,7 +11,7 @@ class Solution:
                 d.append(char)
         return ''.join(d)
 
-
+# Test Cases
 s = "leet**cod*e"
 sol = Solution()
 print(sol.removeStars(s))
